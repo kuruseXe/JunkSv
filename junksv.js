@@ -1,8 +1,10 @@
+// nodeのコアモジュールのrequire宣言
 var http        = require('http');
 var fs          = require('fs');
 var config      = require('./conf/config.js');
 var server      = http.createServer();
 
+// サーバメイン処理
 server.on('request', function (req, res) {
 
     res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -24,6 +26,7 @@ server.on('request', function (req, res) {
     res.end();
 });
 
+// port設定
 server.listen(config.port);
 
 console.log('ポート番号: ' + config.port);
